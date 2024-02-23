@@ -16,6 +16,7 @@
 </template>
 <script>
 import axios from 'axios';
+  
 export default {
   name: 'LoginForm',
   data() {
@@ -27,7 +28,7 @@ export default {
   methods: {
     async loginUser() {
       try {
-        const response = await axios.get('https://jsonplaceholder.typicode.com/users', {
+        const response = await axios.get(`https://${process.env.VUE_APP_PROJECTID}.mockapi.io/ams/api/users`, {
           params: {
             username: this.username,
             password: this.password
