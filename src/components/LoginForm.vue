@@ -34,7 +34,6 @@ export default {
             password: this.password
           }
         });
-        console.log(response)
 
         if (response.data.length === 1) {
           console.log('User logged in successfully!', response.data[0]);
