@@ -35,27 +35,7 @@
     },
     methods: {
       async loginUser() {
-        const data = {
-          username: this.username,
-          password: this.password
-        }
-        try {
-          const response = await axios.post('http://localhost:3000/login', {
-              headers: {
-                  'Content-Type': 'application/json'
-              },
-              data
-          });
-          if (response.data) {
-            console.log(response)
-            this.$router.push('/dashboard');
-          } else {
-            console.log('Invalid username or password.');
-          }
-        } catch (error) {
-          this.loginFailed = true;
-          console.error('Error logging in:', error);
-        }
+        // Enter content here
       }
     }
   };

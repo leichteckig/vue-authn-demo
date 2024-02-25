@@ -6,9 +6,7 @@ import Dashboard from './views/DashboardView.vue';
 const routes = [
   { path: '/', component: Home },
   { path: '/login', component: Login },
-
-  // Protected route
-  { path: '/dashboard', component: Dashboard, meta: { /* Enter protection here */ } }
+  { path: '/dashboard', component: Dashboard, meta: { /* enter content here*/ } }
 ];
 const router = createRouter({
   history: createWebHashHistory(),
