@@ -47,18 +47,9 @@
               },
               data
           });
-          if (response.data.token) {
-            console.log(response)
+          
+          // ##### Add tocken handling here
 
-            // Store the token in local storage
-            localStorage.setItem('token', response.data.token);
-            this.loginFailed = false;
-            
-            // Redirect to dashboard
-            this.$router.push('/dashboard');
-          } else {
-            console.log('Invalid username or password.');
-          }
         } catch (error) {
           this.loginFailed = true;
           console.error('Error logging in:', error);
