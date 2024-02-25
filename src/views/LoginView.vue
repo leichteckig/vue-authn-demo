@@ -35,7 +35,6 @@
     },
     methods: {
       async loginUser() {
-        console.log('user', this.username)
         const data = {
           username: this.username,
           password: this.password
@@ -47,14 +46,8 @@
               },
               data
           });
-          if (response.data.token) {
+          if (response.data) {
             console.log(response)
-
-            // Store the token in local storage
-            localStorage.setItem('token', response.data.token);
-            this.loginFailed = false;
-            
-            // Redirect to dashboard
             this.$router.push('/dashboard');
           } else {
             console.log('Invalid username or password.');

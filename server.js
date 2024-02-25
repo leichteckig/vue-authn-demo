@@ -1,7 +1,6 @@
 // Import required libraries
 const express = require('express');
 const cors = require('cors');
-const jwt = require('jsonwebtoken');
 
 // Create an Express app
 const app = express();
@@ -15,9 +14,6 @@ const users = [{
     role: 'tester'
 }]; // Simple mock... :D
 
-// Secret key to sign JWT
-const secretKey = 'your_secret_key_here';
-
 app.get('/', (req, res) => {
   res.send('Hello World!')
 });
@@ -29,10 +25,9 @@ app.post('/login', (req, res) => {
   // Replace this with your database query to fetch user data
   const user = users.find((u) => u.username === username && u.password === password);
 
+  // Simple mock response
   if (user) {
-    // Generate JWT
-    const token = jwt.sign({ userId: user.id, role: user.role }, secretKey, { expiresIn: '1h' });
-    res.json({ token });
+    res.status(200).json({ message: 'User is authenticated' });
   } else {
     res.status(401).json({ message: 'Invalid username or password' });
   }
